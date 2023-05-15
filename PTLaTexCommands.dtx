@@ -1,0 +1,538 @@
+% \iffalse
+% PTLatexCommands.sty
+% Version 0.1
+% Author: Geraldo Pereira de Morais Júnior | Contact: geraldo.pmj@gmail.com
+% Description: A package that transforms common commands used in LaTeX to commands in Portuguese. Recommended use with abntex2.
+% Why: I thought about how many people in academia do not make an effort to learn LaTeX (especially in humanities); a lot of them say that it is difficult because they forget a lot of the commands. This is an effort to make the commands easier to remember for Portuguese speakers.
+% 
+% PT:
+% Descrição: Um pacote que transforma comandos comuns usados no LaTeX em comandos em português. Uso recomendado com classe abntex2, biblatex e amsmath.
+% Por que: Eu pensei em quantas pessoas na academia não aprendem LaTeX (especialmente nas humanidades); muitos dizem que é difícil porque esquecem muitos comandos. Este é um esforço para tornar os comandos mais fáceis de serem lembrados por falantes de português.
+%------------------------------------------------------------
+%------------------------------------------------------------
+\ProvidesFile{PTLatexCommands.dtx}
+          [2023/05/14 v0.1 PTLatexCommands package]
+
+\RequirePackage{biblatex}
+\RequirePackage{amsmath}
+\RequirePackage{algorithm}
+\RequirePackage{algorithmic}
+\RequirePackage{graphicx}
+
+% Common commands
+% \DescribeMacro{\larguradotexto}
+%   Sets the width of the text to \textwidth.
+\newcommand{\larguradotexto}{\textwidth}
+
+% \DescribeMacro{\enfatizar}
+%   Emphasizes the text using \emph{}.
+\newcommand{\enfatizar}[1]{\emph{#1}}
+
+% \DescribeMacro{\negrito}
+%   Sets the text in bold using \textbf{}.
+\newcommand{\negrito}[1]{\textbf{#1}}
+
+% \DescribeMacro{\italico}
+%   Sets the text in italics using \textit{}.
+\newcommand{\italico}[1]{\textit{#1}}
+
+% \DescribeMacro{\sublinhar}
+%   Underlines the text using \underline{}.
+\newcommand{\sublinhar}[1]{\underline{#1}}
+
+% \DescribeMacro{\parte}
+%   Sets a part heading using \part{}.
+\newcommand{\parte}[1]{\part{#1}}
+
+% \DescribeMacro{\capitulo}
+%   Sets a chapter heading using \chapter{}.
+\newcommand{\capitulo}[1]{\chapter{#1}}
+
+% \DescribeMacro{\paragrafo}
+%   Sets a paragraph heading using \paragraph{}.
+\newcommand{\paragrafo}[1]{\paragraph{#1}}
+
+% \DescribeMacro{\subparagrafo}
+%   Sets a subparagraph heading using \subparagraph{}.
+\newcommand{\subparagrafo}[1]{\subparagraph{#1}}
+
+% \DescribeMacro{\secao}
+%   Sets a section heading using \section{}.
+\newcommand{\secao}[1]{\section{#1}}
+
+% \DescribeMacro{\subsecao}
+%   Sets a subsection heading using \subsection{}.
+\newcommand{\subsecao}[1]{\subsection{#1}}
+
+% \DescribeMacro{\subsubsecao}
+%   Sets a subsubsection heading using \subsubsection{}.
+\newcommand{\subsubsecao}[1]{\subsubsection{#1}}
+
+% \DescribeMacro{\hoje}
+% Prints the current date using \today.
+\newcommand{\hoje}{\today{}}
+
+% \DescribeMacro{\anoatual}
+% Prints the current year using \the\year.
+\newcommand{\anoatual}{\the\year{}}
+
+% \DescribeMacro{\referenciar}
+% References a label using \ref{}.
+\newcommand{\referenciar}[1]{\ref{#1}}
+
+% \DescribeMacro{\rotulo}
+% Creates a label using \label{}.
+\newcommand{\rotulo}[1]{\label{#1}}
+
+% \DescribeMacro{\inserirarquivo}
+% Includes a file using \input{}.
+\newcommand{\inserirarquivo}[1]{\input{#1}}
+
+% \DescribeMacro{\novalinha}
+% Inserts a new line using \newline.
+\newcommand{\novalinha}{\newline}
+
+% \DescribeMacro{\novapagina}
+% Inserts a new page using \newpage.
+\newcommand{\novapagina}{\newpage}
+
+% \DescribeEnv{conteúdo}
+% Begins the document environment using \begin{document}.
+\newenvironment{conteúdo}{\begin{document}}{\end{document}}
+
+%------------------------------------------------------------
+%------------------------------------------------------------
+%lists
+
+% \DescribeEnv{listar}
+% Begins an itemize environment using \begin{itemize}.
+\newenvironment{listar}{\begin{itemize}}{\end{itemize}}
+
+% \DescribeEnv{enumerar}
+% Begins an enumerate environment using \begin{enumerate}.
+\newenvironment{enumerar}{\begin{enumerate}}{\end{enumerate}}
+
+%------------------------------------------------------------
+%------------------------------------------------------------
+% Paragraphs
+
+% \DescribeEnv{alinhamentoadireita}
+% Begins a flushright environment using \begin{flushright}.
+\newenvironment{alinhamentoadireita}{\begin{flushright}}{\end{flushright}}
+
+% \DescribeMacro{\alinharadireita}
+% Sets the text aligned to the right using flushright.
+\newcommand{\alinharadireita}[1]{%
+\begin{flushright}%
+#1%
+\end{flushright}%
+}%
+
+% \DescribeEnv{alinhamentoaesquerda}
+% Begins a flushleft environment using \begin{flushleft}.
+\newenvironment{alinhamentoaesquerda}{\begin{flushleft}}{\end{flushleft}}
+
+% \DescribeMacro{\alinharaesquerda}
+% Sets the text aligned to the left using flushleft.
+\newcommand{\alinharaesquerda}[1]{%
+\begin{flushleft}%
+#1%
+\end{flushleft}%
+}%
+
+% \DescribeEnv{centralizar}
+% Begins a center environment using \begin{center}.
+\newenvironment{centralizar}{\begin{center}}{\end{center}}
+
+% \DescribeMacro{\centralizado}
+% Sets the text centered using center environment.
+\newcommand{\centralizado}[1]{%
+\begin{center}%
+#1%
+\end{center}%
+}%
+
+% \DescribeMacro{\centraliza}
+% Sets the text centered using \centering.
+\newcommand{\centraliza}{\centering}
+
+%------------------------------------------------------------
+%------------------------------------------------------------
+% Biblatex commands
+
+% \DescribeMacro{\autorcitado}
+% Citations the author using \citeauthor{}.
+\newcommand{\autorcitado}[1]{ \citeauthor{#1}}
+
+% \DescribeMacro{\imprimirbibliografia}
+% Prints the bibliography using \printbibliography.
+\newcommand{\imprimirbibliografia}{\printbibliography}
+
+% \DescribeMacro{\citarparenteses}
+% Parenthetical citation using \parencite{}.
+\newcommand{\citarparenteses}[1]{\parencite{#1}}
+
+% \DescribeMacro{\citartexto}
+% Textual citation using \textcite{}.
+\newcommand{\citartexto}[1]{\textcite{#1}}
+
+% \DescribeMacro{\citarrodape}
+% Citation in footnote using \footcite.
+\newcommand{\citarrodape}{\footcite}
+
+% \DescribeMacro{\citarcompleto}
+% Full citation using \fullcite{}.
+\newcommand{\citarcompleto}{\fullcite}
+
+%------------------------------------------------------------
+%------------------------------------------------------------
+% Figures commands
+
+% \DescribeMacro{\incluirfigura}
+% Includes a figure using \includegraphics[]{}.
+\newcommand{\incluirfigura}[2]{\includegraphics[#1]{#2}}
+
+% \DescribeMacro{\legenda}
+% Sets the caption for a figure using \caption{}.
+%\newcommand{\legenda}[1]{\caption{#1}}
+
+%------------------------------------------------------------
+%------------------------------------------------------------
+% Define a new environment called "figura"
+
+% \DescribeMacro{\figura}
+% Defines a new environment called "figura" which includes a figure with caption.
+\newcommand{\figura}[3][0.4]{%
+\begin{figure}[h!]
+\centering
+\includegraphics[width=#1\columnwidth]{#2}
+\caption{#3}
+\end{figure}
+}
+% use: \figura[size in number (will multiply to columnwidth)]{image/imagename.png}{caption}
+
+%------------------------------------------------------------
+%------------------------------------------------------------
+% Quadros:
+
+% \DescribeMacro{\novoquadro}
+% Creates a new environment called "quadro" with a caption and content.
+\newcommand{\novoquadro}[5][0.5]{%
+\begin{quadro}[h!]%
+\caption{\rotulo{#2}#3}%
+\resizebox{#1\columnwidth}{!}{%
+\begin{tabular}{#4}%
+#5%
+\end{tabular}}%
+\end{quadro}%
+}
+% Uso: \novoquadro[<escala>]{<rotulo>}{<legenda>}{<colunas>}{<conteudo>} Exemplo:
+%
+% \novoquadro[0.8]{tab:exemplo}{Exemplo de Quadro}{|c|c|c|}{%
+% \hline
+% \textbf{Pessoa} & \textbf{Idade} & \textbf{Peso} \
+% \hline
+% Marcos & 26 & 68 \
+% \hline
+% Ivone & 22 & 57 \
+% \hline
+% ... & ... & ... \
+% \hline
+% Sueli & 40 & 65 \
+% \hline
+% }
+
+%------------------------------------------------------------
+%------------------------------------------------------------
+% From package Abntex2
+
+% \DescribeMacro{\citacaodireta}
+% Inserts a block quote using \begin{citacao}...\end{citacao}.
+\newcommand{\citacaodireta}[1]{%
+\begin{citacao}%
+#1%
+\end{citacao}%
+}
+%------------------------------------------------------------
+%------------------------------------------------------------
+% amsmath
+
+% \DescribeMacro{\equacao}
+% Displays an equation with a label using \begin{equation}...\end{equation}.
+\newcommand{\equacao}[2]{
+\begin{equation}\label{#1}
+#2
+\end{equation}
+}
+
+% \DescribeMacro{\alinhar}
+% Displays aligned equations with a label using \begin{align}...\end{align}.
+\newcommand{\alinhar}[2]{
+\begin{align}\label{#1}
+#2
+\end{align}
+}
+
+% \DescribeMacro{\pmatriz}
+% Displays a matrix using \begin{pmatrix}...\end{pmatrix}.
+\newcommand{\pmatriz}[1]{
+\begin{pmatrix}
+#1
+\end{pmatrix}
+}
+
+% \DescribeMacro{\divisao}
+% Displays a multi-line equation using \begin{split}...\end{split}.
+\newcommand{\divisao}[1]{
+\begin{split}
+#1
+\end{split}
+}
+
+%------------------------------------------------------------
+%------------------------------------------------------------
+% algorithm and algorithmic
+
+% \DescribeMacro{\algoritmo}
+% Displays an algorithm with a caption using \begin{algorithm}...\end{algorithm}.
+\newcommand{\algoritmo}[3]{%
+\begin{algorithm}
+\caption{\label{#1}#2}
+\begin{algorithmic}[1]
+#3
+\end{algorithmic}%
+\end{algorithm}%
+}
+%
+% Uso:
+% \algoritmo{0.8}{alg:example}{Example Algorithm}{
+% \STATE Step 1
+% \STATE Step 2
+% \STATE Step 3
+% }
+
+%------------------------------------------------------------
+%------------------------------------------------------------
+% End of PTLatexCommands.sty
+
+\documentclass{ltxdoc}
+%\usepackage{PTLaTexCommands}
+\begin{document}
+\title{The \textsf{PTLaTexCommands} package\\
+       Example LaTeX Package}
+\author{Geraldo Pereira de Morais Júnior\\
+        %\texttt{geraldopmj@gmail.com}
+        }
+\date{\today}
+
+\maketitle
+
+\tableofcontents
+
+\section*{Introduction}
+\addcontentsline{toc}{section}{Introduction}
+The \texttt{PTLatexCommands} package provides a set of commands that transform commonly used LaTeX commands into Portuguese commands. It aims to make it easier for Portuguese speakers, especially those in humanities, to remember and use LaTeX commands. The package is recommended for use with the \texttt{abntex2} document class, as well as with \texttt{biblatex}, \texttt{amsmath} packages and \texttt{algorithm \& algorithmic} packages.
+
+\section*{Why translate common commands to portuguese?}
+\addcontentsline{toc}{section}{Why translate common commands to portuguese?}
+Many people in academia, especially in the humanities, find LaTeX difficult to learn and use LaTex because they often forget the commands. The PTLatexCommands package aims to make the commands easier to remember for Portuguese humanities scholar.
+
+\section*{Usage}
+\addcontentsline{toc}{section}{Usage}
+To use the PTLatexCommands package, include the following line in the preamble of your LaTeX document:
+
+\begin{verbatim}
+\usepackage{PTLatexCommands}
+\end{verbatim}
+
+\section*{Available Commands}
+\addcontentsline{toc}{section}{Avilable Commands}
+\subsection*{Common Commands}
+\addcontentsline{toc}{subsection}{Common Commands}
+\begin{itemize}
+  \item \texttt{\textbackslash larguradotexto}: Sets the width of the text.
+  \item \texttt{\textbackslash enfatizar\{text\}}: Emphasizes the \texttt{text} using italics.
+  \item \texttt{\textbackslash negrito\{text\}}: Makes the \texttt{text} bold.
+  \item \texttt{\textbackslash italico\{text\}}: Makes the \texttt{text} italic.
+  \item \texttt{\textbackslash sublinhar\{text\}}: Underlines the \texttt{text}.
+  \item \texttt{\textbackslash parte\{title\}}: Starts a new part with the \texttt{title}.
+  \item \texttt{\textbackslash capitulo\{title\}}: Starts a new chapter with the \texttt{title}.
+  \item \texttt{\textbackslash paragrafo\{title\}}: Starts a new paragraph with the \texttt{title}.
+  \item \texttt{\textbackslash secao\{title\}}: Starts a new section with the \texttt{title}.
+  \item \texttt{\textbackslash subsecao\{title\}}: Starts a new subsection with the \texttt{title}.
+  \item \texttt{\textbackslash subsubsecao\{title\}}: Starts a new subsubsection with the \texttt{title}.
+  \item \texttt{\textbackslash hoje}: Prints the current date.
+  \item \texttt{\textbackslash anoatual}: Prints the current year.
+  \item \texttt{\textbackslash referenciar\{label\}}: References a label.
+  \item \texttt{\textbackslash rotulo\{label\}}: Sets a label for referencing.
+\item \texttt{\textbackslash inserirarquivo\{filename\}}: Inserts the contents of \texttt{filename} into the document.
+\item \texttt{\textbackslash novalinha}: Starts a new line.
+\item \texttt{\textbackslash novapagina}: Starts a new page.
+\end{itemize}
+
+\subsection*{Lists}
+\addcontentsline{toc}{subsection}{Lists}
+\begin{itemize}
+\item \texttt{\textbackslash listar} environment: Begins an itemized list.
+\item \texttt{\textbackslash enumerar} environment: Begins an enumerated list.
+\end{itemize}
+
+\subsection*{Paragraphs}
+\addcontentsline{toc}{subsection}{Paragraphs}
+\begin{itemize}
+\item \texttt{\textbackslash alinhamentoadireita} environment: Aligns the content to the right.
+\item \texttt{\textbackslash alinharadireita\{text\}}: Aligns the \texttt{text} to the right.
+\item \texttt{\textbackslash alinhamentoaesquerda} environment: Aligns the content to the left.
+\item \texttt{\textbackslash alinharaesquerda\{text\}}: Aligns the \texttt{text} to the left.
+\item \texttt{\textbackslash centralizar} environment: Centers the content.
+\item \texttt{\textbackslash centralizado\{text\}}: Centers the \texttt{text}.
+\item \texttt{\textbackslash centraliza}: Centering translated.
+\end{itemize}
+
+\subsection*{Biblatex Commands}
+\addcontentsline{toc}{subsection}{Biblatex Commands}
+\begin{itemize}
+\item \texttt{\textbackslash autorcitado{key}}: Cites the author of the reference with the given \texttt{key}.
+\item \texttt{\textbackslash imprimirbibliografia}: Prints the bibliography.
+\item \texttt{\textbackslash citarparenteses{key}}: Parenthetical citation of the reference with the given \texttt{key}.
+\item \texttt{\textbackslash citartexto{key}}: Citation of the reference with the given \texttt{key} in the text.
+\item \texttt{\textbackslash citarrodape}: Footnote citation.
+\item \texttt{\textbackslash citarcompleto}: Full citation of the reference.
+\end{itemize}
+
+\subsection*{Figures}
+\addcontentsline{toc}{subsection}{Figures}
+\begin{itemize}
+\item \texttt{\textbackslash figura[size]\{filename\}\{caption\}}: Creates a centered figure with the specified \texttt{size} (multiplied to columnwidth), \texttt{filename}, and \texttt{caption}.
+\end{itemize}
+
+\subsection*{Quadros}
+\addcontentsline{toc}{subsection}{Quadros}
+\begin{itemize}
+\item \texttt{\textbackslash novoquadro[size]\{label\}\{caption\}\{columns\}\{content\}}: Creates a new centered quadro (table) with the specified \texttt{size} (multiplied to columnwidth), \texttt{label}, \texttt{caption}, \texttt{columns}, and \texttt{content}.
+\end{itemize}
+
+\subsection*{amsmath Commands}
+\addcontentsline{toc}{subsection}{amsmath Commands}
+\begin{itemize}
+\item \texttt{\textbackslash equacao\{label\}\{equation\}}: Creates a numbered equation with the specified \texttt{label} and \texttt{equation}.
+\item \texttt{\textbackslash alinhar\{label\}\{alignments\}}: Creates a numbered aligned equation with the specified \texttt{label} and \texttt{alignments}.
+\item \texttt{\textbackslash pmatriz\{matrix\}}: Creates a matrix using the \texttt{pmatrix} environment with the specified \texttt{matrix}.
+\item \texttt{\textbackslash divisao\{equation\}}: Creates a split equation with the specified \texttt{equation}.
+\end{itemize}
+
+\subsection*{abntex2 class Commands}
+\addcontentsline{toc}{subsection}{abntex2 class Commands}
+\begin{itemize}
+\item \texttt{\textbackslash citacaodireta\{quote\}}: Inserts a direct quotation with the specified \texttt{quote} using ABNT rules (4 cm indentation from the left margin and the direct quotation should be presented in a 10-point font, single spacing, and without quotation marks.).
+\end{itemize}
+
+\section*{Examples}
+
+\addcontentsline{toc}{section}{Examples}
+\subsection*{Usage of Common Commands}
+\begin{verbatim}
+\larguradotexto
+\enfatizar{texto}
+\negrito{texto}
+\italico{texto}
+\sublinhar{texto}
+\parte{Título}
+\capitulo{Título}
+\paragrafo{Título}
+\secao{Título}
+\subsecao{Título}
+\subsubsecao{Título}
+\hoje
+\anoatual
+\referenciar{label}
+\rotulo{label}
+\inserirarquivo{filename}
+\novalinha
+\novapagina
+\end{verbatim}
+
+\subsection*{Usage of Lists}
+\begin{verbatim}
+\begin{listar}
+\item Item 1
+\item Item 2
+\item Item 3
+\end{listar}
+
+\begin{enumerar}
+\item Item 1
+\item Item 2
+\item Item 3
+\end{enumerar}
+\end{verbatim}
+
+\subsection*{Usage of Paragraphs}
+\begin{verbatim}
+\begin{alinhamentoadireita}
+Texto alinhado à direita.
+\end{alinhamentoadireita}
+
+\alinharadireita{Texto alinhado à direita.}
+
+\begin{alinhamentoaesquerda}
+Texto alinhado à esquerda.
+\end{alinhamentoaesquerda}
+
+\alinharaesquerda{Texto alinhado à esquerda.}
+
+\begin{centralizar}
+Texto centralizado.
+\end{centralizar}
+
+\centralizado{Texto centralizado.}
+\end{verbatim}
+
+\subsection*{Usage of Biblatex Commands}
+\begin{verbatim}
+\autorcitado{key}
+\imprimirbibliografia
+\bibliografia
+\citarparenteses{key}
+\citartexto{key}
+\citarrodape{key}
+\citarcompleto{key}
+\end{verbatim}
+
+\subsection*{Usage of Figures}
+\begin{verbatim}
+\figura[size]{filename}{caption}
+\end{verbatim}
+
+\subsection*{Usage of Quadros}
+\begin{verbatim}
+\novoquadro[size]{label}{caption}{columns}{content} 
+\end{verbatim}
+
+\subsection*{Usage of abntex Commands}
+\begin{verbatim}
+\citacaodireta{quote} 
+\end{verbatim}
+
+
+\subsection*{Usage of amsmath Commands}
+\begin{verbatim}
+\equacao{label}{\equacao{label}{equation} instead of equation environment
+
+\alinhar{label}{align} instead of align environment
+
+\pmatriz{matrix}
+
+\divisao{equation} instead of split environment
+\end{verbatim}
+
+\subsection*{Usage of Abntex2 Commands}
+\begin{verbatim}
+\citacaodireta{quote}
+\end{verbatim}
+
+\subsection*{Usage of algorithm and algorithmic Commands}
+\begin{verbatim}
+\algoritmo{<label>}{<caption>}{<algorithm>}
+\end{verbatim}
+\end{document}
