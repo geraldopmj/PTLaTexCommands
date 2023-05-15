@@ -1,5 +1,7 @@
 # PTLatexCommands package
 
+Repository for PTLaTexCommands LaTex package. https://ctan.org/pkg/ptlatexcommands
+
 PTLatexCommands.sty is a LaTeX package that transforms common commands used in LaTeX to commands in Portuguese. It is recommended to be used with the `abntex2` class, `biblatex`, and `amsmath` packages.
 
 ## Motivation
