@@ -12,7 +12,7 @@ Many people in academia, especially in humanities, find it challenging to learn 
 
 To use the commands provided by the PTLatexCommands package, you need to load the package in your LaTeX document:
 
-\usepackage{PTLatexCommands}
+\usepackage{ptlatexcommands}
 
 ## License
 
